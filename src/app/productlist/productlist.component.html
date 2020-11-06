@@ -1,0 +1,41 @@
+
+<!-- <a (click)="homepage()">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a (click)="trashpage()">TRASH</a> -->
+<button style="    margin-left: 13px;
+margin-top: 32px;" (click)="toggle()">☰</button>
+<div id="mySidebar" class="sidebar" [ngClass]="sidebar? 'modifyside': ''">
+    <button style="margin-left: 18px;
+    margin-bottom: 31px;" (click)="toggle()">☰</button>
+    <a (click)="homepage()">Home</a>
+    <a (click)="trashpage()">Trash</a>
+  </div>
+<h1 style="text-align: center;">Products List</h1>
+<div *ngIf="home" class="main" [ngClass]="sidebar? 'modifymain': ''">
+    <ng-container *ngFor="let product of productlist">
+        <div style="   
+        width: 450px; float: left; margin: 25px; text-align: center;">
+    <a (click)="indivproduct(product)">
+        <p>{{product.title}}</p>
+        <img style="width: 250px;
+        height: 250px;" src="{{product.image}}">
+        <p class="descrip">{{product.description}}</p>
+    </a>
+</div>
+    </ng-container>
+</div>
+
+<div *ngIf="trash" class="main" [ngClass]="sidebar? 'modifymain': ''">
+    <ng-container *ngFor="let product of productstrash">
+        <div style="   
+        width: 450px; float: left; margin: 25px; text-align: center;">
+                <a>
+        <p>{{product.title}}</p>
+        <img style="width: 250px;
+        height: 250px;" src="{{product.image}}">
+        <p class="descrip">{{product.description}}</p>
+    </a>
+    <button (click)="restore(product)">Restore</button>
+    <button (click)="remove(product)">Remove</button>
+    </div>
+    </ng-container>
+</div>

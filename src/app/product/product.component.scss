@@ -1,0 +1,31 @@
+.body{
+    width: 50%;
+    margin-left: 400px;
+    margin-top: 115px;
+}
+
+.imge{
+    position: absolute;
+    margin-top: 2px;
+}
+
+.formcontent{
+    display: grid;
+    position: relative;
+    float: right;
+    width: 450px;
+}
+
+.remove{
+    position: absolute;
+    float: right;
+    margin-top: 360px;
+    margin-left: 480px;
+}
+
+.inputbox{
+    height: 20px;
+    margin: 10px;
+    /* left: 0; */
+    margin-left: 0px;
+}

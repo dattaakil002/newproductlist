@@ -1,0 +1,51 @@
+<!-- <p>{{producttitle.title}}</p>
+<div>
+    <img src="{{product.image}}">
+    <p>{{product.title}}</p>
+    <p>{{product.description}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.rating}}</p>
+    <p>{{product.location}}</p>
+    <input name="title" >
+</div> -->
+<!-- <form #f (ngSubmit)="Update(f)">
+    <img src="{{product.image}}">
+    <input type="text" [(ngModel)] = "product.title" >
+    <input type="text" [(ngModel)] = "product.description" >
+    <input type="text" [(ngModel)] = "product.price" >
+    <input type="text" [(ngModel)] = "product.rating" >
+    <input type="text" [(ngModel)] = "product.location" >
+</form>
+<button (click)="updateproduct()">Update</button> -->
+<div class="body">
+    
+    <div class="imge">
+        <h1>{{product.title}}</h1>
+<img style="width: 250px;
+height: 250px;" src="{{product.image}}">
+</div>
+<div>
+<form [formGroup]="productform" class="formcontent" (ngSubmit)="Update()">
+    <label>Title</label>
+    <input type="text" class="inputbox" formControlName="title"/>
+   
+    <label>Description</label>
+    <textarea style="margin: 10px;
+    margin-left: 0px;" rows="4" cols="50"  formControlName="description"></textarea>
+   
+    <label>Price</label>
+    <input type="text" class="inputbox" formControlName="price"/>
+   
+    <label>Rating</label>
+    <input type="text" class="inputbox" formControlName="rating"/>
+   
+    <label>Location</label>
+    <input type="text"  class="inputbox" formControlName="location"/>
+   
+    <button style="    width: 100px;" class="btn btn-primary">Update</button>
+</form>
+<div class="remove">
+<button style="    width: 100px;" class="btn btn-primary" (click) = "Movetotrash()">Remove</button>
+</div>
+</div>
+</div>
